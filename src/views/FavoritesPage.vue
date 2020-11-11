@@ -27,9 +27,6 @@ export default {
             return this.$store.state.favorites
         }
     },
-    mounted() {
-        console.log(this.$store.state.favorites)
-    },
     methods: {
         removeFromFavorites(movie)  {
             const index = this.$store.state.favorites.indexOf(movie)

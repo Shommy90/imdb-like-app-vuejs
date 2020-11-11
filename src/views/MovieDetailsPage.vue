@@ -62,7 +62,6 @@ export default {
     }),
     mounted() {
         this.getMovie()
-        console.log(this.$route)
     },
     methods: {
         async getMovie() {

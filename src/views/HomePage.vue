@@ -1,52 +1,51 @@
 <template>
-    <div class="home">
-        <form @submit.prevent="getResults">
-            <div class="form-group">
-                <input
-                    class="form-control input-search"
-                    type="text" 
-                    placeholder="Search Movie..."
-                    v-model="searchTerm"
-                />
-            </div>
-
-            <div class="form-group">
-                <label for="movieType">Type: </label>
-                <select v-model="movieType" class="custom-select" name="movieType" id="movieType">
-                    <option value="movie">Movie</option>
-                    <option value="series">Series</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="">Year: </label>
-                <input v-model="movieYear" class="form-control input-year" type="number" placeholder="Year">
-            </div>
-
-            <button type="submit" class="btn btn-info button-search">Search</button>
-        </form>
-
-        
-        <div class="row movies-list">
-            <Spinner v-if="loading" />
-
-            <div v-if="error" class="alert alert-danger col" role="alert">
-                {{error}}
-            </div>
-
-            <MovieItem
-                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-                v-for="movie in results"
-                v-bind:key="movie.imdbID"
-                :movie="movie"
-                :addToFavorites="addToFavorites"
-                :isInFavorites="isInFavorites"
-                :removeFromFavorites="removeFromFavorites"
+  <div class="home">
+      <form @submit.prevent="getResults">
+        <div class="form-group">
+            <input
+                class="form-control input-search"
+                type="text" 
+                placeholder="Search Movie..."
+                v-model="searchTerm"
             />
-
         </div>
+
+        <div class="form-group">
+            <label for="movieType">Type: </label>
+            <select v-model="movieType" class="custom-select" name="movieType" id="movieType">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="">Year: </label>
+            <input v-model="movieYear" class="form-control input-year" type="number" placeholder="Year">
+        </div>
+
+        <button type="submit" class="btn btn-info button-search">Search</button>
+      </form>
+
       
-    </div>
+      <div class="row movies-list">
+          <Spinner v-if="loading" />
+
+          <div v-if="error" class="alert alert-danger col" role="alert">
+            {{error}}
+          </div>
+
+          <MovieItem
+            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            v-for="movie in results"
+            v-bind:key="movie.imdbID"
+            :movie="movie"
+            :addToFavorites="addToFavorites"
+            :isInFavorites="isInFavorites"
+            :removeFromFavorites="removeFromFavorites"
+          />
+      </div>
+
+  </div>
 </template>
 
 <script>
@@ -70,11 +69,10 @@ export default {
     },
     data: () => ({
         searchTerm: "",
-        error: "",
         movieType: "",
         movieYear: "",
+        error: "",
         loading: false,
-        favorites: []
     }),
     methods: {
         async getResults() {
@@ -95,10 +93,8 @@ export default {
                 this.$store.state.results = data.Search
                 this.error = ""
                 this.loading = false
-                this.itemsCount = data.totalResults
             }
 
-            console.log("items count: ", this.itemsCount)
             console.log("data: ", data.Search)
         },
 
