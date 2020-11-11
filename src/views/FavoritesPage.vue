@@ -3,7 +3,7 @@
         <h1>Favorites</h1>
         <div class="row">
             <MovieItem
-                class="col-3 mb-4"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
                 v-for="movie in favorites"
                 v-bind:key="movie.imdbID"
                 :movie="movie"

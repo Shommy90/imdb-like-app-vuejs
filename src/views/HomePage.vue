@@ -35,7 +35,7 @@
             </div>
 
             <MovieItem
-                class="col-3 mb-4"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
                 v-for="movie in results"
                 v-bind:key="movie.imdbID"
                 :movie="movie"
@@ -151,6 +151,7 @@ form {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .form-group {
@@ -166,7 +167,7 @@ form {
 }
 
 .input-search {
-  width: 400px
+  width: 400px;
 }
 
 .input-year {
@@ -177,6 +178,21 @@ form {
   width: 150px;
 }
 
+@media only screen and (max-width: 992px) {
+  form {
+    flex-direction: column;
+  }
 
+  form .form-group {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .input-search {
+    width: 250px;
+  }
+}
 
 </style>

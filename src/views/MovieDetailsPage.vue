@@ -94,4 +94,17 @@ export default {
     margin-left: 5px;
 }
 
+@media only screen and (max-width: 768px) {
+    .details__holder {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details__info-holder {
+        padding-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
 </style>
