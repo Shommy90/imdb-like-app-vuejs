@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "jw-vue-pagination": "^1.0.3",
+    "vue": "^3.0.0",
+    "vue-pagination-2": "^3.0.8",
+    "vue-router": "^4.0.0-rc.2",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
