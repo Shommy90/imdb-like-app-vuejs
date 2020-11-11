@@ -19,7 +19,7 @@
                         @click="removeFromFavorites(movie)"
                         class="btn btn-danger"
                     >
-                    Remove</button>
+                    Remove from Favorites</button>
                 </div>
             </div>
         </div>
