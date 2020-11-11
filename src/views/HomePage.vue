@@ -79,6 +79,7 @@ export default {
     methods: {
         async getResults() {
             this.loading = true
+            this.$store.state.results = []
             this.error = ""
             const type = `&type=${this.movieType}`;
             const year = `&y=${this.movieYear}`;
